@@ -35,7 +35,7 @@ Also, install DeepRobust
 # Train and test 
 Use Pertrubation rate = 10% , on Cora and using MetaAttach to perturb 
 ```python
-!python main.py --ptb_rate 0.1 --dataset 'cora' --attack 'meta' --epochs 250  
+!python main.py --ptb_rate 0.1 --dataset 'cora' --epochs 250  
 ```
 
 ## Main algorithm:
