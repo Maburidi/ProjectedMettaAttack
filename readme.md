@@ -31,6 +31,13 @@ Also, install DeepRobust
 !python setup.py install
 ```
 
+
+# Train and test 
+Use Pertrubation rate = 10% , on Cora and using MetaAttach to perturb 
+```python
+!python main.py --ptb_rate 0.1 --dataset 'cora' --attack 'meta' --epochs 250  
+```
+
 ## Main algorithm:
 
 <img width="738" alt="image" src="https://github.com/Maburidi/ProjectedMettaAttack/assets/48891624/0c5baf66-b8da-4ee6-8ac7-497e950b57d1">
