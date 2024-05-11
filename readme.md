@@ -24,12 +24,7 @@ First install dependencies:
 ```python
 !bash install_dependencies.sh
 ```
-Also, install DeepRobust 
-```python
-!git clone https://github.com/DSE-MSU/DeepRobust.git
-%cd DeepRobust
-!python setup.py install
-```
+
 
 
 ## Train and test 
