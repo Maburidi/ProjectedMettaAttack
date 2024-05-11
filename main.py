@@ -43,17 +43,12 @@ from models import ProjMetattack
 
 def Parser():
     parser = argparse.ArgumentParser(description="RobustFM")
-    #parser.add_argument('--no_cuda', type=int, default=0, help="Whether to disable CUDA (0 for False, 1 for True)")
     parser.add_argument('--ptb_rate', type=float, default=0.1, help="Rate of perturbation for the PTB attack")
     parser.add_argument('--seed', type=int, default=42, help="Seed for random number generation")
     parser.add_argument('--dataset', type=str, default='citeseer', help="Name of the dataset to use, 'cora', 'citeseer'")
-    #parser.add_argument('--attack', type=str, default='meta', choices=['random','meta','nettack'],
-    #                    help="Type of attack to perform")
     parser.add_argument('--hidden', type=int, default=16, help="Number of hidden units in the model")
     parser.add_argument('--dropout', type=float, default=0.5, help="Dropout rate for regularization")
     parser.add_argument('--epochs', type=int, default=250, help="Number of training epochs")
-    parser.add_argument('--only_gcn', action='store_true', help="Whether to use only GCN layer or full model")
-    parser.add_argument('--read_clean', type=int, default=1, help="if you have the cleaned data saved, read it")
 
 
     return parser
@@ -86,7 +81,7 @@ def main(args):
     adj, features, labels = preprocess(adj, features, labels, preprocess_adj=False)
 
     ###### Set the targeted model ##########
-    surrogate = GCN(nfeat=features.shape[1],nhid=16, nclass=labels.max().item() + 1, dropout=0.5, device=device,
+    surrogate = GCN(nfeat=features.shape[1],nhid=16, nclass=labels.max().item() + 1, dropout=dropout, device=device,
                  with_relu=False, with_bias=True, weight_decay=5e-4, lr=0.01)
     # train it on clean data
     surrogate = surrogate.to(device)
