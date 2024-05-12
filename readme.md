@@ -1,7 +1,7 @@
 # Topological Adversarial Attacks on Graph Neural Networks via Projected Meta Learning
 
 
-This is the complete code for the ProjectedMetaAttach framework to generate poisoning attacks on Graph Neural Networks GNNs. The work is pubished in the following papers: <br />
+This is the complete code for the ProjectedMetaAttach (ProjMA) framework to generate poisoning attacks on Graph Neural Networks GNNs. The work is pubished in the following papers: <br />
 ([Paper]())
 
 
